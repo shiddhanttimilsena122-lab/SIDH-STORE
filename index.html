@@ -41,6 +41,11 @@
             color: #111;
             text-transform: uppercase;
         }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
         nav ul {
             list-style: none;
             display: flex;
@@ -54,6 +59,28 @@
         }
         nav ul li a:hover {
             color: #d4af37; /* Luxury Gold Accent */
+        }
+
+        /* Order Count Badge */
+        .cart-icon {
+            position: relative;
+            font-size: 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        .cart-badge {
+            position: absolute;
+            top: -10px;
+            right: -12px;
+            background-color: #ff3e6c;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 2px 6px;
+            min-width: 18px;
+            text-align: center;
         }
 
         /* Hero Banner Section */
@@ -168,7 +195,7 @@
             margin-top: auto;
             margin-bottom: 15px;
         }
-        .add-to-cart {
+        .place-order-btn {
             background-color: #111;
             color: white;
             border: none;
@@ -181,8 +208,30 @@
             letter-spacing: 1px;
             transition: background-color 0.3s ease;
         }
-        .add-to-cart:hover {
+        .place-order-btn:hover {
             background-color: #d4af37;
+        }
+
+        /* About Section */
+        .about-designer {
+            background-color: #f3f3f3;
+            padding: 60px 40px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+        .about-designer h2 {
+            font-size: 28px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        .about-designer p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 16px;
+            color: #555;
+            font-style: italic;
         }
 
         /* Footer */
@@ -210,7 +259,9 @@
                     <li><a href="#tshirts">T-Shirts</a></li>
                     <li><a href="#pants">Pants</a></li>
                     <li><a href="#accessories">Accessories</a></li>
+                    <li><a href="#about">Our Story</a></li>
                 </ul>
+                <button class="cart-icon">📦<span class="cart-badge" id="orderCount">0</span></button>
             </nav>
         </div>
     </header>
@@ -230,8 +281,8 @@
                 <div class="product-info">
                     <span class="product-tag">New Season</span>
                     <h3 class="product-name">Signature White Tee</h3>
-                    <div class="product-price">$39.99</div>
-                    <button class="add-to-cart">Add To Cart</button>
+                    <div class="product-price">Rs. 1,500</div>
+                    <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
                 </div>
             </div>
             <div class="product-card">
@@ -239,8 +290,8 @@
                 <div class="product-info">
                     <span class="product-tag">Limited Edition</span>
                     <h3 class="product-name">Oversized Heavyweight Black Tee</h3>
-                    <div class="product-price">$45.00</div>
-                    <button class="add-to-cart">Add To Cart</button>
+                    <div class="product-price">Rs. 1,800</div>
+                    <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
                 </div>
             </div>
             <div class="product-card">
@@ -248,12 +299,11 @@
                 <div class="product-info">
                     <span class="product-tag">Trending</span>
                     <h3 class="product-name">Vintage Acid-Wash Tee</h3>
-                    <div class="product-price">$49.99</div>
-                    <button class="add-to-cart">Add To Cart</button>
+                    <div class="product-price">Rs. 2,000</div>
+                    <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
                 </div>
             </div>
         </div>
-
 
         <h2 id="pants" class="section-title">SIDH Pants & Denim</h2>
         <div class="product-grid">
@@ -262,8 +312,8 @@
                 <div class="product-info">
                     <span class="product-tag">Classic Fit</span>
                     <h3 class="product-name">Premium Distressed Denim</h3>
-                    <div class="product-price">$89.00</div>
-                    <button class="add-to-cart">Add To Cart</button>
+                    <div class="product-price">Rs. 3,500</div>
+                    <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
                 </div>
             </div>
             <div class="product-card">
@@ -271,8 +321,8 @@
                 <div class="product-info">
                     <span class="product-tag">New Design</span>
                     <h3 class="product-name">Modular Utility Cargo Pants</h3>
-                    <div class="product-price">$95.00</div>
-                    <button class="add-to-cart">Add To Cart</button>
+                    <div class="product-price">Rs. 3,800</div>
+                    <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
                 </div>
             </div>
             <div class="product-card">
@@ -280,12 +330,11 @@
                 <div class="product-info">
                     <span class="product-tag">Tailored Drop</span>
                     <h3 class="product-name">Relaxed Pleated Trousers</h3>
-                    <div class="product-price">$79.99</div>
-                    <button class="add-to-cart">Add To Cart</button>
+                    <div class="product-price">Rs. 3,200</div>
+                    <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
                 </div>
             </div>
         </div>
-
 
         <h2 id="accessories" class="section-title">SIDH Accessories</h2>
         <div class="product-grid">
@@ -294,8 +343,8 @@
                 <div class="product-info">
                     <span class="product-tag">Pure Leather</span>
                     <h3 class="product-name">Minimalist Studio Belt</h3>
-                    <div class="product-price">$55.00</div>
-                    <button class="add-to-cart">Add To Cart</button>
+                    <div class="product-price">Rs. 1,200</div>
+                    <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
                 </div>
             </div>
             <div class="product-card">
@@ -303,8 +352,8 @@
                 <div class="product-info">
                     <span class="product-tag">Streetwear</span>
                     <h3 class="product-name">Embroidered SIDH Logo Cap</h3>
-                    <div class="product-price">$29.99</div>
-                    <button class="add-to-cart">Add To Cart</button>
+                    <div class="product-price">Rs. 999</div>
+                    <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
                 </div>
             </div>
             <div class="product-card">
@@ -312,17 +361,31 @@
                 <div class="product-info">
                     <span class="product-tag">Winter Drop</span>
                     <h3 class="product-name">Heavy Knit Beanie</h3>
-                    <div class="product-price">$24.99</div>
-                    <button class="add-to-cart">Add To Cart</button>
+                    <div class="product-price">Rs. 850</div>
+                    <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
                 </div>
             </div>
         </div>
+
+        <section id="about" class="about-designer">
+            <h2>The SIDH Philosophy</h2>
+            <p>"Founded with a vision to merge minimalist luxury structure with raw streetwear culture. Every single piece is carefully prototyped, using exceptional fabrics and timeless shapes designed to last a lifetime. Thank you for being part of our design journey."</p>
+        </section>
 
     </div>
 
     <footer>
         <p>&copy; 2026 <span>SIDH</span> Designs. Built for Grade 12 E-Commerce Web Design Assignment.</p>
     </footer>
+
+    <script>
+        let count = 0;
+        function placeOrder() {
+            count++;
+            document.getElementById('orderCount').innerText = count;
+            alert("Success! Your order has been placed successfully.");
+        }
+    </script>
 
 </body>
 </html>
