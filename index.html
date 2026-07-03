@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIDH | Premium Apparel</title>
+    <style>
+        /* Global Reset & Typography */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fcfcfc;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #111;
+            text-transform: uppercase;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #d4af37; /* Luxury Gold Accent */
+        }
+
+        /* Hero Banner Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 54px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        .shop-btn {
+            background-color: #ffffff;
+            color: #111;
+            padding: 12px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+        .shop-btn:hover {
+            background-color: #d4af37;
+            color: white;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Section Typography */
+        .section-title {
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #111;
+            padding-bottom: 10px;
+            color: #111;
+        }
+
+        /* Product Grid Layout */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Individual Product Cards */
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+        .product-image {
+            width: 100%;
+            height: 320px;
+            background-color: #eaeaea;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .product-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .product-tag {
+            font-size: 11px;
+            color: #d4af37;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .product-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111;
+            margin-top: auto;
+            margin-bottom: 15px;
+        }
+        .add-to-cart {
+            background-color: #111;
+            color: white;
+            border: none;
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+        .add-to-cart:hover {
+            background-color: #d4af37;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #777;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        footer p span {
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">SIDH</div>
+            <nav>
+                <ul>
+                    <li><a href="#tshirts">T-Shirts</a></li>
+                    <li><a href="#pants">Pants</a></li>
+                    <li><a href="#accessories">Accessories</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>SIDH Studio</h1>
+        <p>Redefining modern street style and luxury essentials.</p>
+        <a href="#tshirts" class="shop-btn">View Collection</a>
+    </section>
+
+    <div class="container">
+
+        <h2 id="tshirts" class="section-title">SIDH T-Shirts</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=400&q=80" alt="SIDH Classic White Tee">
+                <div class="product-info">
+                    <span class="product-tag">New Season</span>
+                    <h3 class="product-name">Signature White Tee</h3>
+                    <div class="product-price">$39.99</div>
+                    <button class="add-to-cart">Add To Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=400&q=80" alt="SIDH Oversized Black Tee">
+                <div class="product-info">
+                    <span class="product-tag">Limited Edition</span>
+                    <h3 class="product-name">Oversized Heavyweight Black Tee</h3>
+                    <div class="product-price">$45.00</div>
+                    <button class="add-to-cart">Add To Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=400&q=80" alt="SIDH Vintage Tee">
+                <div class="product-info">
+                    <span class="product-tag">Trending</span>
+                    <h3 class="product-name">Vintage Acid-Wash Tee</h3>
+                    <div class="product-price">$49.99</div>
+                    <button class="add-to-cart">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+
+
+        <h2 id="pants" class="section-title">SIDH Pants & Denim</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=400&q=80" alt="SIDH Slim Fit Denim">
+                <div class="product-info">
+                    <span class="product-tag">Classic Fit</span>
+                    <h3 class="product-name">Premium Distressed Denim</h3>
+                    <div class="product-price">$89.00</div>
+                    <button class="add-to-cart">Add To Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=400&q=80" alt="SIDH Cargoes">
+                <div class="product-info">
+                    <span class="product-tag">New Design</span>
+                    <h3 class="product-name">Modular Utility Cargo Pants</h3>
+                    <div class="product-price">$95.00</div>
+                    <button class="add-to-cart">Add To Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?auto=format&fit=crop&w=400&q=80" alt="SIDH Trousers">
+                <div class="product-info">
+                    <span class="product-tag">Tailored Drop</span>
+                    <h3 class="product-name">Relaxed Pleated Trousers</h3>
+                    <div class="product-price">$79.99</div>
+                    <button class="add-to-cart">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+
+
+        <h2 id="accessories" class="section-title">SIDH Accessories</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=400&q=80" alt="SIDH Belt">
+                <div class="product-info">
+                    <span class="product-tag">Pure Leather</span>
+                    <h3 class="product-name">Minimalist Studio Belt</h3>
+                    <div class="product-price">$55.00</div>
+                    <button class="add-to-cart">Add To Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=400&q=80" alt="SIDH Cap">
+                <div class="product-info">
+                    <span class="product-tag">Streetwear</span>
+                    <h3 class="product-name">Embroidered SIDH Logo Cap</h3>
+                    <div class="product-price">$29.99</div>
+                    <button class="add-to-cart">Add To Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=400&q=80" alt="SIDH Beanie">
+                <div class="product-info">
+                    <span class="product-tag">Winter Drop</span>
+                    <h3 class="product-name">Heavy Knit Beanie</h3>
+                    <div class="product-price">$24.99</div>
+                    <button class="add-to-cart">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <span>SIDH</span> Designs. Built for Grade 12 E-Commerce Web Design Assignment.</p>
+    </footer>
+
+</body>
+</html>
